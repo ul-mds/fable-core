@@ -4,23 +4,32 @@ from bitarray import bitarray
 from pprl_core import bits
 
 
-@pytest.mark.parametrize("p,n,expected", [(0.5, 5, 8), (0.75, 5, 18), (0.5, 20, 30)])
+@pytest.mark.parametrize(
+    "p,n,expected",
+    [
+        (0.5, 5, 8),
+        (0.75, 20, 15),
+        (0.25, 20, 71),
+        (0.5, 20, 30),
+        (1, 20, 1),
+    ],
+)
 def test_optimal_size(p, n, expected):
     assert bits.optimal_size(p, n) == expected
 
 
 def test_optimal_size_raises_p_too_low():
     with pytest.raises(ValueError) as e:
-        bits.optimal_size(-0.01, 20)
+        bits.optimal_size(0, 20)
 
-    assert str(e.value) == "percentage of set bits must be in range of [0,1), is -0.01"
+    assert str(e.value) == "percentage of set bits must be in range of (0,1], is 0"
 
 
 def test_optimal_size_raises_p_too_high():
     with pytest.raises(ValueError) as e:
-        bits.optimal_size(1, 20)
+        bits.optimal_size(1.01, 20)
 
-    assert str(e.value) == "percentage of set bits must be in range of [0,1), is 1"
+    assert str(e.value) == "percentage of set bits must be in range of (0,1], is 1.01"
 
 
 def test_optimal_size_raises_n_too_low():

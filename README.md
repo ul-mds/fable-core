@@ -1,3 +1,5 @@
+![Code Coverage]()
+
 This package enables core facilities for performing PPRL based on Bloom filters in Python.
 It is mostly backed by the [bitarray](https://github.com/ilanschnell/bitarray) package which implements memory-efficient
 arrays of bits in Python.
@@ -54,7 +56,7 @@ print(ba_random)
 # => bitarray('00000000010100101010000000000000')
 
 # Compute the size of a bitarray such that a certain percentage of its bits are set after
-# a number of bits are picked at random and set. In this example, the percentage is set to 50% 
+# a number of bits are picked at random and set. In this example, the percentage is set to 50%
 # and the amount of random bit sets is 100.
 print(bits.optimal_size(.5, 100))
 # => 145
@@ -131,8 +133,8 @@ ba_rule_90 = harden_rule_90(ba.copy())
 print(ba_rule_90)
 # => bitarray('0000100010001011111100101110000000110101100011111010111011000100')
 
-# Harden a bitarray by moving a sliding window over the bitarray which is used to instantiate a 
-# random number generator to draw random bits to mutate. In this example, the sliding window has 
+# Harden a bitarray by moving a sliding window over the bitarray which is used to instantiate a
+# random number generator to draw random bits to mutate. In this example, the sliding window has
 # a size of 8 bits and moves forward 4 bits after 2 random bits have been mutated.
 harden_rehash = harden.rehash(8, 4, 2)
 ba_rehash = harden_rehash(ba.copy())
@@ -189,7 +191,7 @@ from pprl_core import transform
 
 # String normalization performs several steps. All non-ASCII characters are replaced with their
 # closest ASCII variants. Unicode normalization in the NFKD form is performed. Non-ASCII characters
-# are removed. All characters are converted to their lowercase counterparts and consecutive whitespaces 
+# are removed. All characters are converted to their lowercase counterparts and consecutive whitespaces
 # are reduced to a single one.
 normalize = transform.normalize()
 print(normalize("Müller-Ludenscheidt"))
@@ -223,7 +225,7 @@ print(phonetic_code("Müller-Ludenscheidt"))
 # => "M464"
 
 # Mapping transformation allows for single characters or entire character sequences to be
-# replaced with another. 
+# replaced with another.
 mapping = transform.mapping({
     "male": "m",
     "female": "f"
@@ -245,7 +247,7 @@ mapping_with_default = transform.mapping({
 print(mapping("unknown"))
 # => "u"
 
-# By default, only entire strings are mapped. For inline transformations, set the corresponding 
+# By default, only entire strings are mapped. For inline transformations, set the corresponding
 # parameter to True.
 mapping_inline = transform.mapping({
     "ä": "ae",
