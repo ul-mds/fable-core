@@ -135,14 +135,18 @@ def optimal_size(p: float, n: float) -> int:
 
     Returns:
         size of bitarray that satisfies the given constraints
+
+    References:
+        Kirsch, A., Mitzenmacher, M. (2006). Less Hashing, Same Performance: Building a Better Bloom Filter.
+        https://doi.org/10.1007/11841036_42
     """
     if n <= 0:
         raise ValueError(f"amount of expected insertions must be positive, is {n}")
 
-    if p < 0 or p >= 1:
-        raise ValueError(f"percentage of set bits must be in range of [0,1), is {p}")
+    if p <= 0 or p > 1:
+        raise ValueError(f"percentage of set bits must be in range of (0,1], is {p}")
 
-    return int(math.ceil(1 / (1 - math.pow(p, 1 / n))))
+    return int(math.ceil(1 / (1 - math.pow(1 - p, 1 / n))))
 
 
 def to_base64(ba: bitarray) -> str:
