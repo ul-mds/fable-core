@@ -4,13 +4,16 @@ from bitarray import bitarray
 from pprl_core import bits
 
 
-@pytest.mark.parametrize("p,n,expected", [
-    (0.5, 5, 8),
-    (0.75, 20, 15),
-    (0.25, 20, 71),
-    (0.5, 20, 30),
-    (1, 20, 1),
-])
+@pytest.mark.parametrize(
+    "p,n,expected",
+    [
+        (0.5, 5, 8),
+        (0.75, 20, 15),
+        (0.25, 20, 71),
+        (0.5, 20, 30),
+        (1, 20, 1),
+    ],
+)
 def test_optimal_size(p, n, expected):
     assert bits.optimal_size(p, n) == expected
 
