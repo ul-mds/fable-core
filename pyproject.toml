@@ -24,7 +24,7 @@ classifiers = [
 keywords = ["record linkage", "privacy", "bloom filter", "bitarray", "cryptography"]
 
 [project.urls]
-repository = "https://github.com/mjugl/pprl-core"
+repository = "https://github.com/ul-mds/pprl-core"
 
 [tool.poetry]
 packages = [{ include = "pprl_core" }]
