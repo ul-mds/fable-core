@@ -1,4 +1,4 @@
-![Code Coverage]()
+![Code Coverage](https://img.shields.io/badge/Coverage-99%25-brightgreen.svg)
 
 This package enables core facilities for performing PPRL based on Bloom filters in Python.
 It is mostly backed by the [bitarray](https://github.com/ilanschnell/bitarray) package which implements memory-efficient
