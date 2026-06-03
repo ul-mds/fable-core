@@ -44,3 +44,5 @@ build-backend = "poetry.core.masonry.api"
 [tool.poetry.group.dev.dependencies]
 ruff = ">=0.15.0"
 pytest = ">=8.3.0"
+pre-commit = "^4.6.0"
+pytest-cov = "^7.1.0"

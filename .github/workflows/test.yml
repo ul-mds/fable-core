@@ -30,4 +30,4 @@ jobs:
       - name: Install dependencies
         run: poetry install --with dev
       - name: Test
-        run: poetry run pytest
+        run: poetry run pytest tests --cov=pprl_core --cov-branch --cov-fail-under=90
