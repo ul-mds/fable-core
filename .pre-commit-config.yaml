@@ -26,3 +26,10 @@ repos:
         always_run: true
         pass_filenames: false
         stages: [ pre-push ]
+      - id: readme-coverage-badger
+        name: readme-coverage-badger
+        entry: readme-cov
+        language: system
+        always_run: true
+        pass_filenames: false
+        stages: [ pre-push ]
