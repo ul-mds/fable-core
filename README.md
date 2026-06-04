@@ -1,7 +1,7 @@
-[![PyPI](https://img.shields.io/pypi/v/fable-core)](https://pypi.org/project/fable-core/)
-[![Python Versions](https://img.shields.io/pypi/pyversions/fable-core)](https://pypi.org/project/fable-core/)
+[![PyPI](https://img.shields.io/pypi/v/fable-core?cacheSeconds=0)](https://pypi.org/project/fable-core/)
+[![Python Versions](https://img.shields.io/pypi/pyversions/fable-core?cacheSeconds=0)](https://pypi.org/project/fable-core/)
 ![Code Coverage](https://img.shields.io/badge/Coverage-99%25-brightgreen.svg)
-[![License](https://img.shields.io/pypi/l/fable-core)](https://pypi.org/project/fable-core/)
+[![License](https://img.shields.io/pypi/l/fable-core?cacheSeconds=0)](https://pypi.org/project/fable-core/)
 
 # FABLE Core
 
