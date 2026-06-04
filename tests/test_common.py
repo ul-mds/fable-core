@@ -1,16 +1,42 @@
+import pytest
+
 from pprl_core import common
 
 
-def test_tokenize_default():
-    assert common.tokenize("foobar") == {"_f", "fo", "oo", "ob", "ba", "ar", "r_"}
+@pytest.mark.parametrize(
+    "value,expected",
+    [
+        ("foobar", {"_f", "fo", "oo", "ob", "ba", "ar", "r_"}),
+        ("x", {"_x", "x_"}),
+        ("", set()),
+    ],
+)
+def test_tokenize_default(value, expected):
+    assert common.tokenize(value) == expected
 
 
-def test_tokenize_with_padding():
-    assert common.tokenize("foobar", padding="#") == {"#f", "fo", "oo", "ob", "ba", "ar", "r#"}
+@pytest.mark.parametrize(
+    "value,expected",
+    [
+        ("foobar", {"#f", "fo", "oo", "ob", "ba", "ar", "r#"}),
+        ("x", {"#x", "x#"}),
+        ("", set()),
+    ],
+)
+def test_tokenize_with_padding(value, expected):
+    assert common.tokenize(value, padding="#") == expected
 
 
-def test_tokenize_with_size():
-    assert common.tokenize("foobar", q=3) == {"__f", "_fo", "foo", "oob", "oba", "bar", "ar_", "r__"}
+@pytest.mark.parametrize(
+    "value,expected",
+    [
+        ("foobar", {"__f", "_fo", "foo", "oob", "oba", "bar", "ar_", "r__"}),
+        ("x", {"__x", "_x_", "x__"}),
+        ("", set()),
+    ],
+)
+def test_tokenize_with_size(value, expected):
+    assert common.tokenize(value, q=3) == expected
 
 
 def test_destructure_digest():

@@ -31,5 +31,3 @@ jobs:
         run: poetry install --with dev
       - name: Test
         run: poetry run pytest tests --cov=pprl_core --cov-branch --cov-fail-under=90
-      - name: Coverage badge
-        run: poetry run readme-cov

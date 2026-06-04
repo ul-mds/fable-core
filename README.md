@@ -1,4 +1,7 @@
-![Code Coverage]()
+[![PyPI](https://img.shields.io/pypi/v/pprl-core)](https://pypi.org/project/pprl-core/)
+[![Python Versions](https://img.shields.io/pypi/pyversions/pprl-core)](https://pypi.org/project/pprl-core/)
+![Code Coverage](https://img.shields.io/badge/Coverage-99%25-brightgreen.svg)
+[![License](https://img.shields.io/pypi/l/pprl-core)](https://pypi.org/project/pprl-core/)
 
 This package enables core facilities for performing PPRL based on Bloom filters in Python.
 It is mostly backed by the [bitarray](https://github.com/ilanschnell/bitarray) package which implements memory-efficient

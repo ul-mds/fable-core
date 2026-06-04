@@ -16,8 +16,12 @@ def tokenize(value: str, q=2, padding="_") -> set[str]:
         set of unique tokens obtained from string
     """
     padding = (q - 1) * padding
-    value = padding + value + padding
     tokens: set[str] = set()
+
+    if value == "":
+        return tokens
+
+    value = padding + value + padding
 
     for i in range(len(value) - q + 1):
         tokens.add(value[i : i + q])
@@ -25,7 +29,7 @@ def tokenize(value: str, q=2, padding="_") -> set[str]:
     return tokens
 
 
-def destructure_digest(digest: bytes) -> (int, int, int, int):
+def destructure_digest(digest: bytes) -> tuple[int, int, int, int]:
     """
     Use the first 16 bytes of a hash digest to extract four integers from.
     This is used to compute hash values for all kinds of hashing schemes.
