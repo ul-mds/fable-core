@@ -3,12 +3,21 @@
 ![Code Coverage](https://img.shields.io/badge/Coverage-99%25-brightgreen.svg)
 [![License](https://img.shields.io/pypi/l/fable-core)](https://pypi.org/project/fable-core/)
 
-This package enables core facilities for performing PPRL based on Bloom filters in Python.
-It is mostly backed by the [bitarray](https://github.com/ilanschnell/bitarray) package which implements memory-efficient
-arrays of bits in Python.
-This package is composed of several submodules which implement different aspects of performing PPRL.
+# FABLE Core
 
-# Bitarray primitives
+This package provides the core functionalities to perform PPRL based on Bloom filters in the FABLE (**F**ederated
+**A**nonymized **B**loom filter **L**inkage **E**ngine) ecosystem.
+It is primarily supported by the [bitarray](https://github.com/ilanschnell/bitarray) package, which implements memory-efficient
+arrays of bits in Python.
+The package comprises several submodules that implement various aspects required for PPRL.
+
+## Installation
+
+```commandline
+pip install fable_core
+```
+
+## Bitarray primitives
 
 `fable_core.bits` contains functions for setting bits in a bitarray.
 It implements the double hash, enhanced double hash, triple hash and random hash schemes for setting bits based on
@@ -76,7 +85,7 @@ print(ba == ba_from_b64)
 # => True
 ```
 
-# Hardening
+## Hardening
 
 `fable_core.harden` contains factory functions for creating hardeners that can be applied to bitarrays.
 These functions are guaranteed to always return a modified copy of the bitarrays they are supposed to harden.
@@ -145,7 +154,7 @@ print(ba_rehash)
 # => bitarray('0000110101011110110110111001011111111010111111011011110100111000')
 ```
 
-# Bitarray similarity
+## Bitarray similarity
 
 `fable_core.similarity` contains functions for computing the similarity of bitarrays.
 It implements the Dice coefficient, Cosine similarity and the Jaccard index.
@@ -185,7 +194,7 @@ print(similarity.jaccard(ba_1, ba_2))
 # => 0.125
 ```
 
-# String transformation
+## String transformation
 
 `fable_core.transform` contains factory functions for performing preprocessing on strings.
 
@@ -263,7 +272,7 @@ print(mapping_inline("Müller-Ludenscheidt"))
 # => "Mueller-Ludenscheidt"
 ```
 
-# Additional phonetic codes
+## Additional phonetic codes
 
 `fable_core.phonetics_extra` contains additional phonetic code implementations that are compatible with
 [pyphonetics](https://github.com/Lilykos/pyphonetics).
@@ -278,6 +287,6 @@ print(cologne.phonetics("Müller-Ludenscheidt"))
 # => "65752682"
 ```
 
-# License
+## License
 
 MIT.
