@@ -1,7 +1,7 @@
 import pytest
 from bitarray import bitarray
 
-from pprl_core import bits
+from fable_core import bits
 
 
 @pytest.mark.parametrize(

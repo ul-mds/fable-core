@@ -1,6 +1,6 @@
 import pytest
 
-from pprl_core.phonetics_extra import ColognePhonetics, GenericSoundex
+from fable_core.phonetics_extra import ColognePhonetics, GenericSoundex
 
 
 @pytest.fixture()

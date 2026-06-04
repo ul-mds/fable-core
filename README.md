@@ -1,7 +1,7 @@
-[![PyPI](https://img.shields.io/pypi/v/pprl-core)](https://pypi.org/project/pprl-core/)
-[![Python Versions](https://img.shields.io/pypi/pyversions/pprl-core)](https://pypi.org/project/pprl-core/)
+[![PyPI](https://img.shields.io/pypi/v/fable-core)](https://pypi.org/project/fable-core/)
+[![Python Versions](https://img.shields.io/pypi/pyversions/fable-core)](https://pypi.org/project/fable-core/)
 ![Code Coverage](https://img.shields.io/badge/Coverage-99%25-brightgreen.svg)
-[![License](https://img.shields.io/pypi/l/pprl-core)](https://pypi.org/project/pprl-core/)
+[![License](https://img.shields.io/pypi/l/fable-core)](https://pypi.org/project/fable-core/)
 
 This package enables core facilities for performing PPRL based on Bloom filters in Python.
 It is mostly backed by the [bitarray](https://github.com/ilanschnell/bitarray) package which implements memory-efficient
@@ -10,14 +10,14 @@ This package is composed of several submodules which implement different aspects
 
 # Bitarray primitives
 
-`pprl_core.bits` contains functions for setting bits in a bitarray.
+`fable_core.bits` contains functions for setting bits in a bitarray.
 It implements the double hash, enhanced double hash, triple hash and random hash schemes for setting bits based on
 a set number of initial hash values in a bitarray.
 It also offers other utility functions for working on PPRL with Bloom filters.
 
 ```python
 from bitarray import bitarray
-from pprl_core import bits
+from fable_core import bits
 
 ba = bitarray(20)
 
@@ -31,7 +31,7 @@ bits.test_bit(ba, 5)
 bits.test_bit(ba, 25)
 bits.test_bit(ba, -6)
 
-# pprl_core.bits implements the double hash, enhanced double hash, random hash and triple hash schemes.
+# fable_core.bits implements the double hash, enhanced double hash, random hash and triple hash schemes.
 # Depending on chosen scheme, the corresponding functions require different initial hash values.
 h0, h1, h2 = 13, 37, 42
 k = 5
@@ -78,12 +78,12 @@ print(ba == ba_from_b64)
 
 # Hardening
 
-`pprl_core.harden` contains factory functions for creating hardeners that can be applied to bitarrays.
+`fable_core.harden` contains factory functions for creating hardeners that can be applied to bitarrays.
 These functions are guaranteed to always return a modified copy of the bitarrays they are supposed to harden.
 They will never modify the input bitarrays.
 
 ```python
-from pprl_core import harden
+from fable_core import harden
 from random import Random
 from bitarray import bitarray
 
@@ -147,11 +147,11 @@ print(ba_rehash)
 
 # Bitarray similarity
 
-`pprl_core.similarity` contains functions for computing the similarity of bitarrays.
+`fable_core.similarity` contains functions for computing the similarity of bitarrays.
 It implements the Dice coefficient, Cosine similarity and the Jaccard index.
 
 ```python
-from pprl_core import similarity
+from fable_core import similarity
 from random import Random
 from bitarray import bitarray
 
@@ -187,10 +187,10 @@ print(similarity.jaccard(ba_1, ba_2))
 
 # String transformation
 
-`pprl_core.transform` contains factory functions for performing preprocessing on strings.
+`fable_core.transform` contains factory functions for performing preprocessing on strings.
 
 ```python
-from pprl_core import transform
+from fable_core import transform
 
 # String normalization performs several steps. All non-ASCII characters are replaced with their
 # closest ASCII variants. Unicode normalization in the NFKD form is performed. Non-ASCII characters
@@ -265,13 +265,13 @@ print(mapping_inline("Müller-Ludenscheidt"))
 
 # Additional phonetic codes
 
-`pprl_core.phonetics_extra` contains additional phonetic code implementations that are compatible with
+`fable_core.phonetics_extra` contains additional phonetic code implementations that are compatible with
 [pyphonetics](https://github.com/Lilykos/pyphonetics).
 At the time, only the "Kölner Phonetik" is implemented, which is a phonetic code that is specialized
 for the German language.
 
 ```python
-from pprl_core import phonetics_extra
+from fable_core import phonetics_extra
 
 cologne = phonetics_extra.ColognePhonetics()
 print(cologne.phonetics("Müller-Ludenscheidt"))

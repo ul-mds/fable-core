@@ -1,6 +1,6 @@
 import pytest
 
-from pprl_core import common
+from fable_core import common
 
 
 @pytest.mark.parametrize(

@@ -3,7 +3,7 @@ import random
 import pytest
 from bitarray import bitarray
 
-from pprl_core import harden
+from fable_core import harden
 
 
 def test_balance():

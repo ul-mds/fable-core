@@ -1,7 +1,7 @@
 import pytest
 from bitarray import bitarray
 
-from pprl_core import similarity
+from fable_core import similarity
 
 _ba_left = bitarray("1" * 40 + "0" * 10)
 _ba_right = bitarray("1" * 10 + "0" * 35 + "1" * 5)

@@ -1,8 +1,8 @@
 import pytest
 from pyphonetics import Soundex
 
-from pprl_core import transform
-from pprl_core.phonetics_extra import ColognePhonetics
+from fable_core import transform
+from fable_core.phonetics_extra import ColognePhonetics
 
 
 def test_character_filter_custom():
