@@ -14,7 +14,7 @@ The package comprises several submodules that implement various aspects required
 ## Installation
 
 ```commandline
-pip install fable_core
+pip install fable-core
 ```
 
 ## Bitarray primitives
