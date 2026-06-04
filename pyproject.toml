@@ -1,6 +1,6 @@
 [project]
 name = "fable-core"
-version = "0.1.4"
+version = "0.1.5"
 description = "Facilities for performing privacy-preserving record linkage with Bloom filters."
 authors = [
     {name = "Maximilian Jugl"},
