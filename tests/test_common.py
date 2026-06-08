@@ -39,6 +39,19 @@ def test_tokenize_with_size(value, expected):
     assert common.tokenize(value, q=3) == expected
 
 
+@pytest.mark.parametrize(
+    "value,expected",
+    [
+        ("foobar", {"fo", "oo", "ob", "ba", "ar"}),
+        ("ab", {"ab"}),
+        ("a", set()),
+        ("", set()),
+    ],
+)
+def test_tokenize_without_padding(value, expected):
+    assert common.tokenize(value, q=2, padding="") == expected
+
+
 def test_destructure_digest():
     assert common.destructure_digest(b"\x01" * 4 + b"\x23" * 4 + b"\x45" * 4 + b"\x67" * 4) == (
         0x01010101,
