@@ -5,7 +5,8 @@ import struct
 
 def tokenize(value: str, q=2, padding="_") -> set[str]:
     """
-    Split a string into tokens of fixed size.
+    Split a string into tokens of fixed size. Empty strings always return an empty set. If no padding character is
+    specified and a value is too short for being split into tokens, an empty set is returned.
 
     Args:
         value: string to tokenize
