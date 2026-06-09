@@ -2,6 +2,7 @@
 [![Python Versions](https://img.shields.io/pypi/pyversions/fable-core?cacheSeconds=0)](https://pypi.org/project/fable-core/)
 ![Code Coverage](https://img.shields.io/badge/Coverage-99%25-brightgreen.svg)
 [![License](https://img.shields.io/pypi/l/fable-core?cacheSeconds=0)](https://pypi.org/project/fable-core/)
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white)](https://conventionalcommits.org)
 
 # FABLE Core
 
