@@ -157,7 +157,8 @@ print(ba_rehash)
 ## Bitarray similarity
 
 `fable_core.similarity` contains functions for computing the similarity of bitarrays.
-It implements the Dice coefficient, Cosine similarity and the Jaccard index.
+The Dice coefficient, Cosine similarity and the Jaccard index are three examples of implemented similarity measures.
+Have a  look at the module to see what measures are currently implemented.
 
 ```python
 from fable_core import similarity
@@ -173,25 +174,36 @@ print(ba_1)
 print(ba_2)
 # => bitarray('01001000111110011011100100101000')
 
-# For all similarity functions, let n1 and n2 be the amount of set bits in ba_1 and ba_2 respectively,
-# and let n12 be the amount of set bits in the intersection of ba_1 and ba_2.
+# For all similarity functions, let c and b be the amount of set bits in either ba_1 or ba_2.
+# Let a be the amount of set bits in the intersection and d the amount bits where both bitarrays are set to 0.
 
 # In ba_1 and ba_2, there are only 3 positions where bits are set in both bitarrays. Each similarity
 # function will treat this a bit differently.
 print((ba_1 & ba_2).count())
 # => 3
 
-# Dice coefficient (2 * n12 / (n1 + n2))
+# Dice coefficient (2 * a / (2 * a + b + c))
 print(similarity.dice(ba_1, ba_2))
 # => 0.2222222222222222
 
-# Cosine similarity (n12 / sqrt(n1 * n2))
+# Cosine similarity (a / sqrt((a + b) * (a + c)))
 print(similarity.cosine(ba_1, ba_2))
 # => 0.22360679774997896
 
-# Jaccard index (n12 / (n1 + n2 - n12))
+# Jaccard index (a / (a + b + c))
 print(similarity.jaccard(ba_1, ba_2))
 # => 0.125
+```
+
+## Similarity aggregation
+
+`fable_core.aggregation` contains functions for aggregating multiple similarity into one.
+
+```python
+from fable_core import aggregation
+
+print(aggregation.average(similarities=[0.5, 0.8], weights=[2, 1]))
+# => 0.6
 ```
 
 ## String transformation
